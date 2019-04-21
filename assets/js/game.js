@@ -2,8 +2,13 @@
 
 // Declare Varibles
 var randomNum = $('#randNum');
-var totalCount = []; //TODO Math Array
-    
+var totalCount = 0; //TODO Math Array
+var wins = 0;
+var lose = 0;
+
+
+// ************** Random Number Generator To Win **********// 
+
 randomNum = Math.floor(Math.random() * 100) + 1;
 
 console.log('randNum is ' + randomNum)
@@ -12,9 +17,19 @@ $('#randNum').append(randomNum);
     
 
 
-// for loop for win/ lose counter
+// *********************** Function for Win Lose Logic ************************ // 
+function winLose() {
+    if(totalCount === randomNum) {
+        for(var i = 0; i < 10; i++){
+            console.log('You Win!')
+            wins++;
+        }
 
-//random number generator gems
+    } else if(totalCount > randomNum) {
+        console.log('You Lose!')
+        lose++;
+    }
+}
 
 // *********************** RNG For the Gems ************************ // 
 var gemOne = $('#one');
@@ -22,6 +37,8 @@ var gemTwo = $('#two');
 var gemThree = $('#three');
 var gemFour = $('#four');
 
+
+function randGems(){
     gemOne = Math.floor(Math.random() * 10 + 1)
     gemTwo = Math.floor(Math.random() * 10 + 1)
     gemThree = Math.floor(Math.random() * 10 + 1)
@@ -31,7 +48,7 @@ var gemFour = $('#four');
     console.log('Gem Two is ' + gemTwo);
     console.log('Gem Three is ' + gemThree);
     console.log('Gem Four is ' + gemFour);
-
+}
 
 //if user score is equal to computer score 
     //user recives a win
