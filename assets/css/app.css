@@ -50,6 +50,12 @@ body {
     display: inline-block;
 }
 
+#randNum {
+    font-size: 2rem;
+    
+    position: absolute;
+}
+
 .winLose {
     height: 5rem;
     width: 10rem;
