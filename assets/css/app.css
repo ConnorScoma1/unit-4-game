@@ -7,9 +7,20 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     color: #1eff00;
 }
+
 .heading {
     border: #1eff00 solid .5rem;
     margin-bottom: 1rem;
+    background-color: #1eff00;
+    transition: ease 1s;
+    color: #2a2a2a;
+}
+
+.heading:hover {
+    color: #1eff00;
+    background-color: #2a2a2a;
+    transition: ease 1s;
+    cursor: pointer;
 }
 
 .main-head {
@@ -29,4 +40,58 @@ body {
 
 .content ol li {
     padding-bottom: 2rem;
+}
+
+.getThis {
+    height: 5rem;
+    width: 10rem;
+    border: #1eff00 solid .5rem;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.winLose {
+    height: 5rem;
+    width: 10rem;
+    border: #1eff00 solid .5rem;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.winLose p {
+    display: block;
+}
+
+.blocks {
+    margin-top: 2rem;
+}
+
+.block-img {
+    height: 10rem;
+    width: 12rem;
+    transition: .5s ease;
+}
+
+.block-img:hover {
+    opacity: .5;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.start {
+    font-size: 1rem;
+    border: .25rem solid #1eff00;
+    padding: 1rem;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 1rem;
+}
+
+.userScore {
+    font-size: 1rem;
+    border: .25rem solid #1eff00;
+    padding: 1rem;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 1rem;
 }
