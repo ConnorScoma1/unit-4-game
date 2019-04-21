@@ -6,6 +6,18 @@ var totalCount = 0; //TODO Math Array
 var wins = 0;
 var lose = 0;
 
+// *********************** RNG For the Gems ************************ // 
+    var gemOne = $('#one');
+    var gemTwo = $('#two');
+    var gemThree = $('#three');
+    var gemFour = $('#four');
+
+
+    gemOne = Math.floor(Math.random() * 10 + 2)
+    gemTwo = Math.floor(Math.random() * 10 + 2)
+    gemThree = Math.floor(Math.random() * 10 + 2)
+    gemFour = Math.floor(Math.random() * 10 + 2)
+
 
 // ************** Random Number Generator To Win **********// 
 
@@ -17,56 +29,95 @@ $('#randNum').append(randomNum);
     
 
 
-// *********************** Function for Win Lose Logic ************************ // 
-function winLose() {
-    if(totalCount === randomNum) {
+// *********************** Win Lose Logic ************************ // 
 
-        for(var i = 0; i < 10; i++){ //if user score is equal to computer score 
-            console.log('You Win!') //user recives a win 
-            wins++;
-        }
+$('#wins').text(wins); // adding text to DOM for Wins
+$('#lose').text(lose); // adding text to DOM for Losses
 
-    } else if(totalCount > randomNum) {  //else if user score is > computer score
-        console.log('You Lose!')  //user will recive a loss
-        lose++;
-    }
+function winner(){
+    wins++;
+    $('#wins').text(wins);
+    reset();
 }
 
-// *********************** RNG For the Gems ************************ // 
-var gemOne = $('#one');
-var gemTwo = $('#two');
-var gemThree = $('#three');
-var gemFour = $('#four');
+function losser(){
+    lose++;
+    $('#lose').text(lose);
+    reset();
+}
+
+function reset() {
+    gemOne = Math.floor(Math.random() * 10 + 2)
+    gemTwo = Math.floor(Math.random() * 10 + 2)
+    gemThree = Math.floor(Math.random() * 10 + 2)
+    gemFour = Math.floor(Math.random() * 10 + 2)
+    totalCount = 0;
+    $('#userScore').text(totalCount);
+}
 
 
-    gemOne = Math.floor(Math.random() * 10 + 1)
-    gemTwo = Math.floor(Math.random() * 10 + 1)
-    gemThree = Math.floor(Math.random() * 10 + 1)
-    gemFour = Math.floor(Math.random() * 10 + 1)
+// *********************** Game Loop ************************ // 
 
-    console.log('Gem One is ' + gemOne);
-    console.log('Gem Two is ' + gemTwo);
-    console.log('Gem Three is ' + gemThree);
-    console.log('Gem Four is ' + gemFour);
+$('#one').on('click', function(){
 
+    totalCount = totalCount + gemOne;
 
-// *********************** The Game Loop ************************ // 
+    console.log('New Score ' + totalCount);
 
+        $('#userScore').text(totalCount);
 
-    $('gemOne').click(function(){
-       gemOne += totalCount;
-    });
+            if(totalCount === randomNum){
+                winner();
 
-    $('gemTwo').click(function(){
-        gemTwo += totalCount;
-     });
+            } else if (totalCount > randomNum) {
+                losser();
+            }
+});
 
-     $('gemThree').click(function(){
-        gemThree += totalCount;
-     });
+$('#two').on('click', function(){
 
-     $('gemFour').click(function(){
-        gemFour += totalCount;
-     });
+    totalCount = totalCount + gemTwo;
 
-     
+    console.log('New Score ' + totalCount);
+
+        $('#userScore').text(totalCount);
+
+            if(totalCount === randomNum){
+                winner();
+
+            } else if (totalCount > randomNum) {
+                losser();
+            }
+});
+
+$('#three').on('click', function(){
+
+    totalCount = totalCount + gemThree;
+
+    console.log('New Score ' + totalCount);
+
+        $('#userScore').text(totalCount);
+
+            if(totalCount === randomNum){
+                winner();
+
+            } else if (totalCount > randomNum) {
+                losser();
+            }
+});
+
+$('#four').on('click', function(){
+
+    totalCount = totalCount + gemFour;
+
+    console.log('New Score ' + totalCount);
+
+        $('#userScore').text(totalCount);
+
+            if(totalCount === randomNum){
+                winner();
+
+            } else if (totalCount > randomNum) {
+                losser();
+            }
+});
