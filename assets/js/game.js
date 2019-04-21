@@ -72,50 +72,50 @@ $('#one').on('click', function(){ // gem 1 event handler
             }
 });
 
-$('#two').on('click', function(){
+$('#two').on('click', function(){ // gem 2 function
 
-    totalCount = totalCount + gemTwo;
+    totalCount = totalCount + gemTwo; //current totalCount == totalCount + value of gem 2
 
-    console.log('New Score ' + totalCount);
+    console.log('New Score ' + totalCount); // checking current score
 
-        $('#userScore').text(totalCount);
+        $('#userScore').text(totalCount); // printing current score to the DOM
 
-            if(totalCount === randomNum){
-                winner();
+            if(totalCount === randomNum){ // HOW TO Win
+                winner(); // Win factor
 
-            } else if (totalCount > randomNum) {
-                losser();
+            } else if (totalCount > randomNum) { // HOW TO lose 
+                losser(); // lose factor
             }
 });
 
-$('#three').on('click', function(){
+$('#three').on('click', function(){ // gem 3 function 
 
-    totalCount = totalCount + gemThree;
+    totalCount = totalCount + gemThree; // current totalCount == totalCount + value of gem 3
 
-    console.log('New Score ' + totalCount);
+    console.log('New Score ' + totalCount); // check current value of totalCount
 
-        $('#userScore').text(totalCount);
+        $('#userScore').text(totalCount); // print total count to DOM
 
-            if(totalCount === randomNum){
-                winner();
+            if(totalCount === randomNum){ // HOW TO Win
+                winner(); // Win Factor 
 
-            } else if (totalCount > randomNum) {
-                losser();
+            } else if (totalCount > randomNum) { // HOW TO Lose
+                losser(); // Lose factor
             }
 });
 
-$('#four').on('click', function(){
+$('#four').on('click', function(){ //gem 4 function
 
-    totalCount = totalCount + gemFour;
+    totalCount = totalCount + gemFour; //current totalCount == totalCount + value of gem 4
 
-    console.log('New Score ' + totalCount);
+    console.log('New Score ' + totalCount); // checking currrent status of totalCount
 
-        $('#userScore').text(totalCount);
+        $('#userScore').text(totalCount); //printing totalCount to the DOM
 
-            if(totalCount === randomNum){
-                winner();
+            if(totalCount === randomNum){ // HOW TO Win
+                winner(); // Win Factor
 
-            } else if (totalCount > randomNum) {
-                losser();
+            } else if (totalCount > randomNum) { // HOW TO Lose
+                losser(); // Lose Factor
             }
 });
