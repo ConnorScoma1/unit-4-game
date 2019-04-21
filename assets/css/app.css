@@ -100,3 +100,18 @@ body {
     margin-left: 25%;
     margin-top: 1rem;
 }
+
+.links, 
+link:active {
+    color: white;
+    text-decoration: none;
+    transition: .5s;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.links:hover {
+    color: #2a2a2a;
+    background-color: #1eff00;
+    transition: .5s;
+}

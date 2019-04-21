@@ -1,31 +1,29 @@
-// Game.js psuedo coding
-
 // Declare Varibles
-var randomNum = $('#randNum');
-var totalCount = 0; //TODO Math Array
-var wins = 0;
-var lose = 0;
+var randomNum = $('#randNum'); // Random Number
+var totalCount = 0; // Total Count
+var wins = 0; // State of Wins
+var lose = 0; // State of Losses 
 
 // *********************** RNG For the Gems ************************ // 
-    var gemOne = $('#one');
-    var gemTwo = $('#two');
-    var gemThree = $('#three');
-    var gemFour = $('#four');
+    var gemOne = $('#one'); // First Gem
+    var gemTwo = $('#two'); // Second Gem
+    var gemThree = $('#three'); // Thrid Gem
+    var gemFour = $('#four'); // Fourth Gem
 
 
-    gemOne = Math.floor(Math.random() * 10 + 2)
-    gemTwo = Math.floor(Math.random() * 10 + 2)
-    gemThree = Math.floor(Math.random() * 10 + 2)
-    gemFour = Math.floor(Math.random() * 10 + 2)
+    gemOne = Math.floor(Math.random() * 10 + 2) // RNG for Gem 1
+    gemTwo = Math.floor(Math.random() * 10 + 2) // RNG for Gen 2
+    gemThree = Math.floor(Math.random() * 10 + 2) // RNG for Gen 3
+    gemFour = Math.floor(Math.random() * 10 + 2) // RNG for Gen 4
 
 
 // ************** Random Number Generator To Win **********// 
 
-randomNum = Math.floor(Math.random() * 100) + 1;
+randomNum = Math.floor(Math.random() * 100) + 1; // Random Number Generator
 
-console.log('randNum is ' + randomNum)
+console.log('randNum is ' + randomNum) // Checking Random Number Gen
 
-$('#randNum').append(randomNum);
+$('#randNum').append(randomNum); // print number to DOM
     
 
 
@@ -34,43 +32,43 @@ $('#randNum').append(randomNum);
 $('#wins').text(wins); // adding text to DOM for Wins
 $('#lose').text(lose); // adding text to DOM for Losses
 
-function winner(){
-    wins++;
-    $('#wins').text(wins);
-    reset();
+function winner(){ // Win Conition
+    wins++;  // Wins = wins + 1
+    $('#wins').text(wins); // print wins to DOM
+    reset(); //reset function
 }
 
-function losser(){
-    lose++;
-    $('#lose').text(lose);
-    reset();
+function losser(){ // lose function
+    lose++; // lose = lose + 1
+    $('#lose').text(lose); // print lose to DOM
+    reset(); // reset function
 }
 
-function reset() {
-    gemOne = Math.floor(Math.random() * 10 + 2)
-    gemTwo = Math.floor(Math.random() * 10 + 2)
-    gemThree = Math.floor(Math.random() * 10 + 2)
-    gemFour = Math.floor(Math.random() * 10 + 2)
-    totalCount = 0;
-    $('#userScore').text(totalCount);
+function reset() { // reset Function 
+    gemOne = Math.floor(Math.random() * 10 + 2) //RNG for gem 1 
+    gemTwo = Math.floor(Math.random() * 10 + 2) //RNG for gem 2
+    gemThree = Math.floor(Math.random() * 10 + 2)//RNG for gem 3
+    gemFour = Math.floor(Math.random() * 10 + 2)//RNG for gem 4
+    totalCount = 0; //reset totalCount
+    $('#userScore').text(totalCount); //reprint totalCount
 }
 
 
 // *********************** Game Loop ************************ // 
 
-$('#one').on('click', function(){
+$('#one').on('click', function(){ // gem 1 event handler 
 
-    totalCount = totalCount + gemOne;
+    totalCount = totalCount + gemOne; //current totalCount == totalCount + value of gem 1
 
-    console.log('New Score ' + totalCount);
+    console.log('New Score ' + totalCount); // checking current score
 
-        $('#userScore').text(totalCount);
+        $('#userScore').text(totalCount); // print totalCount To the DOM 
 
-            if(totalCount === randomNum){
-                winner();
+            if(totalCount === randomNum){ // HOW TO Win
+                winner(); //Run Win factor 
 
-            } else if (totalCount > randomNum) {
-                losser();
+            } else if (totalCount > randomNum) { // HOW TO Lose
+                losser(); // Run lose factor
             }
 });
 
