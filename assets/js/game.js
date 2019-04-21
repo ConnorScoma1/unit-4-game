@@ -20,13 +20,14 @@ $('#randNum').append(randomNum);
 // *********************** Function for Win Lose Logic ************************ // 
 function winLose() {
     if(totalCount === randomNum) {
-        for(var i = 0; i < 10; i++){
-            console.log('You Win!')
+
+        for(var i = 0; i < 10; i++){ //if user score is equal to computer score 
+            console.log('You Win!') //user recives a win 
             wins++;
         }
 
-    } else if(totalCount > randomNum) {
-        console.log('You Lose!')
+    } else if(totalCount > randomNum) {  //else if user score is > computer score
+        console.log('You Lose!')  //user will recive a loss
         lose++;
     }
 }
@@ -38,7 +39,6 @@ var gemThree = $('#three');
 var gemFour = $('#four');
 
 
-function randGems(){
     gemOne = Math.floor(Math.random() * 10 + 1)
     gemTwo = Math.floor(Math.random() * 10 + 1)
     gemThree = Math.floor(Math.random() * 10 + 1)
@@ -48,11 +48,25 @@ function randGems(){
     console.log('Gem Two is ' + gemTwo);
     console.log('Gem Three is ' + gemThree);
     console.log('Gem Four is ' + gemFour);
-}
 
-//if user score is equal to computer score 
-    //user recives a win
 
-    //else if user score is > computer score
-        //user will recive a loss
-    
+// *********************** The Game Loop ************************ // 
+
+
+    $('gemOne').click(function(){
+       gemOne += totalCount;
+    });
+
+    $('gemTwo').click(function(){
+        gemTwo += totalCount;
+     });
+
+     $('gemThree').click(function(){
+        gemThree += totalCount;
+     });
+
+     $('gemFour').click(function(){
+        gemFour += totalCount;
+     });
+
+     
