@@ -3,5 +3,5 @@
 ---
 ### This application uses the jQuery Libray for the majority of the code
 ---
-###HOW TO CLONE
+###HOW TO CLONE ::
 `GIT CLONE https://github.com/ConnorScoma1/unit-4-game.git`
