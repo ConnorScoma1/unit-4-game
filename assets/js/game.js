@@ -47,8 +47,9 @@ function losser(){ // lose function
 function reset() { // reset Function 
     gemOne = Math.floor(Math.random() * 10 + 2) //RNG for gem 1 
     gemTwo = Math.floor(Math.random() * 10 + 2) //RNG for gem 2
-    gemThree = Math.floor(Math.random() * 10 + 2)//RNG for gem 3
-    gemFour = Math.floor(Math.random() * 10 + 2)//RNG for gem 4
+    gemThree = Math.floor(Math.random() * 10 + 2) //RNG for gem 3
+    gemFour = Math.floor(Math.random() * 10 + 2) //RNG for gem 4
+
     totalCount = 0; //reset totalCount
     $('#userScore').text(totalCount); //reprint totalCount
 }
