@@ -115,3 +115,25 @@ link:active {
     background-color: #1eff00;
     transition: .5s;
 }
+/* ============================ Adding Mobile Opt =========================== */
+@media screen and (max-width: 500px) {
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .getThis {
+        height: 4rem;
+        width: 5rem;
+        border: #1eff00 solid .25rem;
+        padding: 1rem;
+        font-size: .5rem;
+    }
+    .winLose {
+        height: 4rem;
+        width: 5rem;
+        border: #1eff00 solid .25rem;
+        padding: 1rem;
+        font-size: .5rem;
+        
+    }
+}
