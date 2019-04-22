@@ -26,6 +26,7 @@ body {
 .main-head {
     font-size: 3rem;
     padding: 2rem;
+    animation: slideRight ease 1s;
 }
 
 .content {
@@ -36,10 +37,12 @@ body {
 .instruct {
     font-size: 2rem;
     margin-bottom: 1rem;
+    animation: slideLeft ease 1s;
 } 
 
 .content ol li {
     padding-bottom: 2rem;
+    animation: slideRight ease 1s;
 }
 
 .getThis {
@@ -48,6 +51,7 @@ body {
     border: #1eff00 solid .5rem;
     padding: 2rem;
     display: inline-block;
+    animation: fadeIn ease 1s;
 }
 
 #randNum {
@@ -61,6 +65,7 @@ body {
     border: #1eff00 solid .5rem;
     padding: 2rem;
     display: inline-block;
+    animation: fadeIn ease 1s;
 }
 
 .winLose p {
@@ -75,6 +80,7 @@ body {
     height: 10rem;
     width: 10rem;
     transition: .5s ease;
+    animation: slideLeft ease 1s;
 }
 
 .block-img:hover {
@@ -90,6 +96,7 @@ body {
     margin-right: 25%;
     margin-left: 25%;
     margin-top: 1rem;
+    animation: slideRight ease 1s;
 }
 
 .userScore {
@@ -99,6 +106,7 @@ body {
     margin-right: 25%;
     margin-left: 25%;
     margin-top: 1rem;
+    animation: slideLeft ease 1s;
 }
 
 .links, 
@@ -115,6 +123,44 @@ link:active {
     background-color: #1eff00;
     transition: .5s;
 }
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    85% {
+        transform: translateX(25px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    85% {
+        transform: translateX(-25px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
 /* ============================ Adding Mobile Opt =========================== */
 @media screen and (max-width: 500px) {
     .content {
