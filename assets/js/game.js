@@ -1,10 +1,12 @@
 // Declare Varibles
+
 var randomNum = $('#randNum'); // Random Number
 var totalCount = 0; // Total Count
 var wins = 0; // State of Wins
 var lose = 0; // State of Losses 
 
 // *********************** RNG For the Gems ************************ // 
+
     var gemOne = $('#one'); // First Gem
     var gemTwo = $('#two'); // Second Gem
     var gemThree = $('#three'); // Thrid Gem
@@ -30,21 +32,27 @@ $('#randNum').append(randomNum); // print number to DOM
 // *********************** Win Lose Logic ************************ // 
 
 $('#wins').text(wins); // adding text to DOM for Wins
+
 $('#lose').text(lose); // adding text to DOM for Losses
 
 function winner(){ // Win Conition
+
     wins++;  // Wins = wins + 1
     $('#wins').text(wins); // print wins to DOM
     reset(); //reset function
+
 }
 
 function losser(){ // lose function
+
     lose++; // lose = lose + 1
     $('#lose').text(lose); // print lose to DOM
     reset(); // reset function
+
 }
 
 function reset() { // reset Function 
+
     gemOne = Math.floor(Math.random() * 10 + 2) //RNG for gem 1 
     gemTwo = Math.floor(Math.random() * 10 + 2) //RNG for gem 2
     gemThree = Math.floor(Math.random() * 10 + 2) //RNG for gem 3
@@ -52,6 +60,7 @@ function reset() { // reset Function
 
     totalCount = 0; //reset totalCount
     $('#userScore').text(totalCount); //reprint totalCount
+    
 }
 
 
